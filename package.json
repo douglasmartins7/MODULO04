@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --mode production", # ele vai pegar o index.js e converter para um js que o navegador entenda
+    "build": "webpack --mode production",
     "dev": "webpack-dev-server --mode development"
   },
   "devDependencies": {
