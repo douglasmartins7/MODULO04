@@ -16,6 +16,14 @@ achar o estado dentro
 */
 
 class TechList extends Component {
+  /*static defaultProps = {
+    tech: "Oculto"
+  };*/
+
+  /*static propTypes = {
+
+  }*/
+
   state = {
     newTech: "",
     techs: ["Node.js", "ReactJs", "React Native"]
@@ -66,6 +74,7 @@ class TechList extends Component {
               onDelete={() => this.handleDelete(tech)}
             />
           ))}
+          <TechItem />
         </ul>
         <input
           type="text"
