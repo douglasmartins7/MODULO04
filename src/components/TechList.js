@@ -26,8 +26,22 @@ class TechList extends Component {
 
   state = {
     newTech: "",
-    techs: ["Node.js", "ReactJs", "React Native"]
+    techs: []
   };
+
+  componentDidMount() {
+    const techs = localStorage.getItem("techs");
+
+    if (techs) {
+      this.setState({ techs: JSON.parse(techs) });
+    }
+  }
+
+  componentDidUpdate(_, prevState) {
+    if (prevState.techs !== this.state.techs) {
+      localStorage.setItem("techs", JSON.stringify(this.state.techs));
+    }
+  }
 
   handleInputchange = e => {
     // lidar com mudança de entrada
@@ -74,7 +88,6 @@ class TechList extends Component {
               onDelete={() => this.handleDelete(tech)}
             />
           ))}
-          <TechItem />
         </ul>
         <input
           type="text"
